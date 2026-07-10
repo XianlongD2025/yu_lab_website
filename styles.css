@@ -42,7 +42,8 @@ a { color: inherit; text-decoration: none; }
 .nav { display: flex; gap: clamp(14px, 2vw, 26px); flex-wrap: wrap; align-items: center; }
 .nav a { font: 500 12px var(--mono); color: var(--ink); padding-bottom: 3px; white-space: nowrap; position: relative; }
 .nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--ink); }
-.btn-join { font: 500 12px var(--mono); color: #fff; background: var(--teal); padding: 7px 14px; white-space: nowrap; }
+.nav a.btn-join { font: 500 12px var(--mono); color: #fff; background: var(--teal); padding: 8px 16px; white-space: nowrap; display: inline-flex; align-items: center; line-height: 1; }
+.nav a.btn-join::after { content: none; }
 
 /* ---------- generic section ---------- */
 .sec { border-bottom: 1px solid var(--ink); }
