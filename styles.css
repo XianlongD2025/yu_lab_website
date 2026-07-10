@@ -108,8 +108,10 @@ a { color: inherit; text-decoration: none; }
 /* ---------- join band ---------- */
 .join { padding: clamp(44px,6vw,80px) clamp(20px,5vw,64px); border-bottom: 1px solid var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; }
 .join .label { font: 500 11px var(--mono); color: var(--teal); letter-spacing: .14em; margin-bottom: 14px; }
-.join h2 { font: 500 clamp(28px,4.4vw,52px)/1.05 var(--disp); letter-spacing: -.02em; max-width: 760px; text-wrap: balance; }
-.join a.cta { font: 500 13px var(--mono); color: #fff; background: var(--ink); padding: 16px 28px; white-space: nowrap; }
+.join h2 { font: 500 clamp(28px,4.4vw,52px)/1.05 var(--disp); letter-spacing: -.02em; max-width: 620px; text-wrap: balance; }
+.join-right { max-width: 400px; }
+.join-right p { font: 400 clamp(13px,1.5vw,15px)/1.65 var(--disp); color: #555; margin-bottom: 20px; }
+.join a.cta { display: inline-flex; align-items: center; font: 500 13px var(--mono); color: #fff; background: var(--ink); padding: 16px 28px; white-space: nowrap; }
 
 /* ---------- people ---------- */
 .pi { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); border-bottom: 1px solid var(--ink); }
