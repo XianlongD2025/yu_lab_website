@@ -1,7 +1,6 @@
 # Yu Lab website
 
-清华大学化学系 Yu Lab 课题组网站。纯静态站点（HTML + CSS，无框架、无构建步骤），
-可直接托管到 GitHub Pages，之后绑定自定义域名。
+Test
 
 ## 文件结构
 
