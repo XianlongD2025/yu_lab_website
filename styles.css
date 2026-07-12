@@ -119,8 +119,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- people ---------- */
 .pi { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); border-bottom: 1px solid var(--ink); }
-.pi .portrait { border-right: 1px solid var(--ink); min-height: 340px; background: var(--hatch); display: flex; align-items: center; justify-content: center; }
-.pi .portrait span { font: 400 11px var(--mono); color: var(--teal); border: 1px solid var(--ink); background: #fff; padding: 7px 12px; }
+.pi .portrait { border-right: 1px solid var(--ink); height: clamp(380px, 43vw, 620px); background: #d8d6d3; overflow: hidden; }
+.pi .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
 .pi .info { padding: clamp(28px,4vw,48px) clamp(20px,4vw,48px); display: flex; flex-direction: column; justify-content: center; }
 .pi .role { font: 400 11px var(--mono); color: var(--teal); margin-bottom: 14px; }
 .pi .name { font: 600 clamp(26px,3.2vw,36px)/1.05 var(--disp); letter-spacing: -.02em; }
@@ -183,5 +183,10 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- responsive niceties ---------- */
 @media (max-width: 560px) {
-  .pi .portrait { min-height: 220px; }
+  .site-header { gap: 12px; flex-wrap: wrap; padding: 14px 20px; }
+  .brand { width: 100%; }
+  .nav { width: 100%; gap: 10px; flex-wrap: nowrap; justify-content: space-between; }
+  .nav a { font-size: 10px; }
+  .nav a.btn-join { display: none; }
+  .pi .portrait { height: clamp(380px, 110vw, 520px); border-right: 0; border-bottom: 1px solid var(--ink); }
 }
