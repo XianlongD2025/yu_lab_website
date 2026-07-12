@@ -121,7 +121,7 @@ a { color: inherit; text-decoration: none; }
 .pi { display: grid; grid-template-columns: minmax(280px, 360px) minmax(0, 1fr); border-bottom: 1px solid var(--ink); }
 .pi .portrait { border-right: 1px solid var(--ink); height: 440px; background: #d8d6d3; overflow: hidden; }
 .pi .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
-.pi .info { padding: clamp(28px,4vw,48px) clamp(20px,4vw,48px); display: flex; flex-direction: column; justify-content: center; }
+.pi .info { padding: clamp(28px,4vw,48px) clamp(20px,4vw,48px) clamp(28px,4vw,48px) clamp(64px,6vw,96px); display: flex; flex-direction: column; justify-content: center; }
 .pi .role { font: 400 11px var(--mono); color: var(--teal); margin-bottom: 14px; }
 .pi .name { font: 600 clamp(26px,3.2vw,36px)/1.05 var(--disp); letter-spacing: -.02em; }
 .pi .affil { font: 400 13px var(--mono); color: #666; margin: 8px 0 20px; }
@@ -184,6 +184,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 760px) {
   .pi { grid-template-columns: 1fr; }
   .pi .portrait { height: 390px; border-right: 0; border-bottom: 1px solid var(--ink); }
+  .pi .info { padding-left: clamp(20px, 5vw, 40px); }
 }
 
 /* ---------- responsive niceties ---------- */
