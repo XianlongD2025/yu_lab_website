@@ -166,14 +166,16 @@ a { color: inherit; text-decoration: none; }
 .filters button { cursor: pointer; font: 500 11px var(--mono); letter-spacing: .06em; padding: 8px 14px; border: 1px solid var(--ink); background: #fff; color: var(--ink); }
 .filters button.active { background: var(--ink); color: #fff; }
 
-.pub { display: grid; grid-template-columns: 56px 1fr; gap: clamp(14px,2vw,28px); padding: 22px clamp(20px,5vw,64px); border-bottom: 1px solid var(--line); align-items: start; }
-.pub .yr { font: 500 12px var(--mono); color: var(--teal); padding-top: 3px; }
+.pub { display: grid; grid-template-columns: 72px minmax(0,1fr); gap: clamp(14px,2vw,28px); padding: 22px clamp(20px,5vw,64px); border-bottom: 1px solid var(--line); align-items: start; }
+.pub-index { display: flex; flex-direction: column; gap: 5px; padding-top: 1px; }
+.pub .num { font: 600 clamp(18px,2vw,22px)/1 var(--mono); color: var(--ink); }
+.pub .yr { font: 500 11px var(--mono); color: var(--teal); }
 .pub .ti { font: 500 clamp(15px,1.8vw,17px)/1.4 var(--disp); margin-bottom: 8px; text-wrap: pretty; }
 .pub .au { font: 400 12px/1.5 var(--disp); color: #777; margin-bottom: 8px; }
 .pub .foot { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 .pub .jrn { font: 500 10.5px var(--mono); color: #fff; background: var(--ink); padding: 3px 8px; }
-.pub .ci { font: 400 11px var(--mono); color: #999; }
-.pub .doi { font: 500 11px var(--mono); color: var(--teal); }
+.pub .detail { font: 400 11px var(--mono); color: #888; }
+.pub .doi { font: 500 11px var(--mono); color: var(--teal); overflow-wrap: anywhere; }
 
 /* ---------- footer ---------- */
 .site-footer { padding: clamp(36px,4vw,52px) clamp(20px,5vw,64px); background: var(--ink); color: #aaa; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
@@ -187,4 +189,5 @@ a { color: inherit; text-decoration: none; }
 /* ---------- responsive niceties ---------- */
 @media (max-width: 560px) {
   .pi .portrait { min-height: 220px; }
+  .pub { grid-template-columns: 52px minmax(0,1fr); gap: 14px; }
 }
