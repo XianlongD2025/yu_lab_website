@@ -120,8 +120,10 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- people ---------- */
 .pi { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); border-bottom: 1px solid var(--ink); }
-.pi .portrait { border-right: 1px solid var(--ink); min-height: 340px; background: var(--hatch); display: flex; align-items: center; justify-content: center; }
+.pi .portrait { position: relative; overflow: hidden; border-right: 1px solid var(--ink); min-height: 340px; background: var(--hatch); display: flex; align-items: center; justify-content: center; }
 .pi .portrait span { font: 400 11px var(--mono); color: var(--teal); border: 1px solid var(--ink); background: #fff; padding: 7px 12px; }
+.pi .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+.person .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
 .pi .info { padding: clamp(28px,4vw,48px) clamp(20px,4vw,48px); display: flex; flex-direction: column; justify-content: center; }
 .pi .role { font: 400 11px var(--mono); color: var(--teal); margin-bottom: 14px; }
 .pi .name { font: 600 clamp(26px,3.2vw,36px)/1.05 var(--disp); letter-spacing: -.02em; }
