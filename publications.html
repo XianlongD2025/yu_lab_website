@@ -24,62 +24,7 @@
   </header>
 
   <main>
-    <section class="page-head">
-      <div class="eyebrow">PUBLICATIONS</div>
-      <h1>Peer-reviewed research.</h1>
-    </section>
-
-    <!-- citation stats -->
-    <section class="stats">
-      <div class="stat"><div class="n">60+</div><div class="l">PUBLICATIONS</div></div>
-      <div class="stat"><div class="n">12,000+</div><div class="l">CITATIONS</div></div>
-      <div class="stat"><div class="n">42</div><div class="l">H-INDEX</div></div>
-      <div class="stat"><div class="n">8</div><div class="l">COVER FEATURES</div></div>
-    </section>
-
-    <!-- representative -->
-    <section class="sec">
-      <div style="padding:clamp(24px,3vw,36px) clamp(20px,5vw,64px) 0">
-        <h2>Representative work</h2>
-      </div>
-      <div class="rep-grid">
-        <div class="rep">
-          <div class="toc"><span>[ TOC graphic ]</span></div>
-          <div class="body">
-            <div class="meta"><span class="jrn">Nature</span><span class="yr">2026</span></div>
-            <div class="ti">Pancreatic-targeted lipid nanoparticles based on organ capsule filtration</div>
-            <div class="ci">New citations</div>
-          </div>
-        </div>
-        <div class="rep">
-          <div class="toc"><span>[ TOC graphic ]</span></div>
-          <div class="body">
-            <div class="meta"><span class="jrn">Nature Materials</span><span class="yr">2025</span></div>
-            <div class="ti">Albumin-recruiting lipid nanoparticles for safer, more effective mRNA vaccination</div>
-            <div class="ci">24 citations</div>
-          </div>
-        </div>
-        <div class="rep">
-          <div class="toc"><span>[ TOC graphic ]</span></div>
-          <div class="body">
-            <div class="meta"><span class="jrn">Sci. Transl. Med.</span><span class="yr">2025</span></div>
-            <div class="ti">Metabolism-programming mRNA nanomedicine for MASLD</div>
-            <div class="ci">18 citations</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- filter + full list -->
-    <section>
-      <div class="filters" id="filters">
-        <button class="active" data-filter="All">All</button>
-        <button data-filter="2026">2026</button>
-        <button data-filter="2025">2025</button>
-        <button data-filter="2024">2024</button>
-        <button data-filter="2023">2023</button>
-      </div>
-
+    <section aria-label="All publications">
       <div id="pub-list">
         <div class="pub" data-year="2026">
           <div class="yr">2026</div>
@@ -200,24 +145,6 @@
       <span>DESIGNED FOR DELIVERY.</span>
     </div>
   </footer>
-
-  <!-- year filter (plain JS, safe to leave as-is) -->
-  <script>
-    (function () {
-      var buttons = document.querySelectorAll('#filters button');
-      var pubs = document.querySelectorAll('#pub-list .pub');
-      buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          buttons.forEach(function (b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          var f = btn.getAttribute('data-filter');
-          pubs.forEach(function (p) {
-            p.style.display = (f === 'All' || p.getAttribute('data-year') === f) ? '' : 'none';
-          });
-        });
-      });
-    })();
-  </script>
 
 </body>
 </html>
