@@ -151,6 +151,67 @@ a { color: inherit; text-decoration: none; }
 .alum .a-name { font: 500 13px var(--disp); }
 .alum .a-now { font: 400 11px var(--mono); color: #888; text-align: right; }
 
+/* ---------- life beyond the bench ---------- */
+.lab-life {
+  padding: clamp(40px,5vw,68px) 0 clamp(26px,3vw,40px);
+  border-bottom: 1px solid var(--ink);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(207,113,74,.18), transparent 26%),
+    linear-gradient(135deg, #f8f0e6 0%, #efe1d2 100%);
+}
+.life-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 28px;
+  padding: 0 clamp(20px,5vw,64px) clamp(24px,3vw,36px);
+}
+.life-eyebrow { font: 500 11px var(--mono); color: #a64f32; letter-spacing: .16em; margin-bottom: 12px; }
+.life-head h2 { font: 600 clamp(30px,4.5vw,54px)/1.02 var(--disp); letter-spacing: -.03em; }
+.life-head p { max-width: 300px; font: 400 13px/1.55 var(--mono); color: #765f52; text-align: right; }
+.life-scroller {
+  overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x proximity;
+  padding: 0 clamp(20px,5vw,64px) 14px;
+  scrollbar-width: thin; scrollbar-color: #bd8061 rgba(255,255,255,.45);
+}
+.life-scroller:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.life-scroller::-webkit-scrollbar { height: 8px; }
+.life-scroller::-webkit-scrollbar-track { background: rgba(255,255,255,.45); border-radius: 99px; }
+.life-scroller::-webkit-scrollbar-thumb { background: #bd8061; border-radius: 99px; }
+.life-mosaic {
+  display: grid;
+  grid-template-columns: clamp(440px,46vw,680px) clamp(280px,30vw,430px) clamp(440px,46vw,680px);
+  grid-template-rows: 210px 210px;
+  gap: 12px; width: max-content; min-width: 100%;
+}
+.life-card {
+  position: relative; overflow: hidden; margin: 0; border-radius: 16px;
+  background: #d9bda8; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(83,52,34,.09);
+}
+.life-card::after {
+  content: ""; position: absolute; inset: 50% 0 0;
+  background: linear-gradient(to bottom, transparent, rgba(34,20,13,.48)); pointer-events: none;
+}
+.life-card img {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+  object-fit: cover; filter: saturate(.92) contrast(.97) brightness(1.02);
+}
+.life-card--visit { grid-column: 1; grid-row: 1 / span 2; }
+.life-card--outing { grid-column: 2; grid-row: 1; }
+.life-card--gathering { grid-column: 2; grid-row: 2; }
+.life-card--dinner { grid-column: 3; grid-row: 1 / span 2; }
+.life-card--visit img { object-position: center 45%; }
+.life-card--outing img { object-position: center 57%; }
+.life-card--gathering img { object-position: center 47%; }
+.life-card--dinner img { object-position: center 66%; }
+.life-card figcaption {
+  position: absolute; z-index: 2; left: 14px; bottom: 14px;
+  font: 500 11px var(--mono); color: #38251a; background: rgba(255,248,240,.92);
+  padding: 7px 10px; border-radius: 999px; backdrop-filter: blur(6px);
+}
+.life-scroll-note {
+  display: flex; justify-content: flex-end; gap: 12px;
+  padding: 12px clamp(20px,5vw,64px) 0;
+  font: 500 10px var(--mono); color: #9a6248; letter-spacing: .1em;
+}
+
 /* ---------- publications ---------- */
 .rep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: clamp(20px,2vw,28px); }
 .rep { border-top: 1px solid var(--ink); border-right: 1px solid var(--line); padding: 0 0 24px; }
@@ -194,6 +255,14 @@ a { color: inherit; text-decoration: none; }
   .pi .portrait { height: 390px; border-right: 0; border-bottom: 1px solid var(--ink); }
   .pi .pi-copy { transform: none; }
   .pub .foot { display: flex; flex-wrap: wrap; }
+  .life-head { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .life-head p { text-align: left; }
+  .life-mosaic {
+    grid-template-columns: 84vw 68vw 84vw;
+    grid-template-rows: 160px 160px;
+    gap: 10px;
+  }
+  .life-card { border-radius: 13px; }
 }
 
 @media (max-width: 560px) {
