@@ -155,26 +155,24 @@ a { color: inherit; text-decoration: none; }
 .lab-life {
   padding: clamp(40px,5vw,68px) 0 clamp(26px,3vw,40px);
   border-bottom: 1px solid var(--ink);
-  background:
-    radial-gradient(circle at 88% 12%, rgba(207,113,74,.18), transparent 26%),
-    linear-gradient(135deg, #f8f0e6 0%, #efe1d2 100%);
+  background: #f4f2ef;
 }
 .life-head {
   display: flex; align-items: flex-end; justify-content: space-between; gap: 28px;
   padding: 0 clamp(20px,5vw,64px) clamp(24px,3vw,36px);
 }
-.life-eyebrow { font: 500 11px var(--mono); color: #a64f32; letter-spacing: .16em; margin-bottom: 12px; }
+.life-eyebrow { font: 500 11px var(--mono); color: #888; letter-spacing: .16em; margin-bottom: 12px; }
 .life-head h2 { font: 600 clamp(30px,4.5vw,54px)/1.02 var(--disp); letter-spacing: -.03em; }
-.life-head p { max-width: 300px; font: 400 13px/1.55 var(--mono); color: #765f52; text-align: right; }
+.life-head p { max-width: 300px; font: 400 13px/1.55 var(--mono); color: #6f6f6c; text-align: right; }
 .life-scroller {
   overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x proximity;
   padding: 0 clamp(20px,5vw,64px) 14px;
-  scrollbar-width: thin; scrollbar-color: #bd8061 rgba(255,255,255,.45);
+  scrollbar-width: thin; scrollbar-color: #868683 rgba(0,0,0,.08);
 }
 .life-scroller:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
 .life-scroller::-webkit-scrollbar { height: 8px; }
-.life-scroller::-webkit-scrollbar-track { background: rgba(255,255,255,.45); border-radius: 99px; }
-.life-scroller::-webkit-scrollbar-thumb { background: #bd8061; border-radius: 99px; }
+.life-scroller::-webkit-scrollbar-track { background: rgba(0,0,0,.08); border-radius: 99px; }
+.life-scroller::-webkit-scrollbar-thumb { background: #868683; border-radius: 99px; }
 .life-mosaic {
   display: grid;
   grid-template-columns:
@@ -184,12 +182,12 @@ a { color: inherit; text-decoration: none; }
   gap: 12px; width: max-content; min-width: 100%;
 }
 .life-card {
-  position: relative; overflow: hidden; margin: 0; border-radius: 16px;
-  background: #d9bda8; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(83,52,34,.09);
+  position: relative; overflow: hidden; margin: 0; border-radius: 5px;
+  background: #d8d8d5; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 .life-card::after {
   content: ""; position: absolute; inset: 50% 0 0;
-  background: linear-gradient(to bottom, transparent, rgba(34,20,13,.48)); pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,.38)); pointer-events: none;
 }
 .life-card img {
   position: absolute; inset: 0; display: block; width: 100%; height: 100%;
@@ -213,13 +211,22 @@ a { color: inherit; text-decoration: none; }
 .life-card--conference img { object-position: center 50%; }
 .life-card figcaption {
   position: absolute; z-index: 2; left: 14px; bottom: 14px;
-  font: 500 11px var(--mono); color: #38251a; background: rgba(255,248,240,.92);
-  padding: 7px 10px; border-radius: 999px; backdrop-filter: blur(6px);
+  font: 500 11px var(--mono); color: #222; background: rgba(255,255,255,.72);
+  padding: 7px 10px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
 }
 .life-scroll-note {
   display: flex; justify-content: flex-end; gap: 12px;
   padding: 12px clamp(20px,5vw,64px) 0;
-  font: 500 10px var(--mono); color: #9a6248; letter-spacing: .1em;
+  font: 500 10px var(--mono); color: #666; letter-spacing: .1em;
+}
+.life-scroll-note span:last-child { animation: life-scroll-hint 1.6s ease-in-out infinite; }
+@keyframes life-scroll-hint {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .life-scroll-note span:last-child { animation: none; }
 }
 
 /* ---------- publications ---------- */
@@ -272,7 +279,7 @@ a { color: inherit; text-decoration: none; }
     grid-template-rows: 160px 160px;
     gap: 10px;
   }
-  .life-card { border-radius: 13px; }
+  .life-card { border-radius: 5px; }
 }
 
 @media (max-width: 560px) {
