@@ -167,7 +167,7 @@ a { color: inherit; text-decoration: none; }
   display: block; flex: 0 0 auto; width: 120px; height: 105px;
   background-image: url("assets/affiliations/clinical-partners.jpg");
   background-repeat: no-repeat; background-size: 514px 282px;
-  filter: grayscale(1) contrast(.92); opacity: .66; mix-blend-mode: multiply;
+  filter: none; opacity: 1; mix-blend-mode: normal;
 }
 .partner-mark--1 { background-position: -3px -45px; }
 .partner-mark--2 { background-position: -130px -45px; }
